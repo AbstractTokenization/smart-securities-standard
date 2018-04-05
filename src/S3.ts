@@ -196,7 +196,7 @@ export class Client {
             );
         }
       }
-    }
+    };
     const T = computeInstance();
     // Configure the cap table
     await Promise.all(
@@ -228,7 +228,7 @@ export class Client {
     administrator: string
   ): Promise<void> {
     if (this.capTables === null) {
-      throw MissingCapTables
+      throw MissingCapTables;
     }
     const tokenAddress = await this.capTables.addresses.call(sid);
     const mgrt = new SolidityFunction(this.w3.eth, migrateABI, tokenAddress);
